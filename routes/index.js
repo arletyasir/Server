@@ -8,7 +8,9 @@ import listaReservasUserRoute from "./reserva/lista-reservas-user.routes.js";
 import getMenuId from "./menu/menu-id.routes.js";
 
 import listaOrdenRoute from "./reserva/orden-list.routes.js";
+import createAsignacionRoute from "./asignaciones/createasignacion.router.js";
 
 export {loginRoute,registerRoute,obtenerMenuRoute,createMenuRoute,reservaRoute,listaReservasRoute,listaReservasUserRoute,getMenuId,
-    listaOrdenRoute
+    listaOrdenRoute,
+    createAsignacionRoute
 }

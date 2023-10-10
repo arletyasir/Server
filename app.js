@@ -1,6 +1,7 @@
 import express from 'express';
 import { loginRoute, registerRoute,createMenuRoute,obtenerMenuRoute,reservaRoute,listaReservasRoute,listaReservasUserRoute,getMenuId ,
-  listaOrdenRoute
+  listaOrdenRoute,
+  createAsignacionRoute
 } from './routes/index.js';
 
 import dotenv from 'dotenv';
@@ -63,6 +64,7 @@ app.use(getMenuId);
 app.use(reservaRoute);
 
 app.use(listaOrdenRoute);
+app.use(createAsignacionRoute);
 
 
 app.use(express.static('public'))
