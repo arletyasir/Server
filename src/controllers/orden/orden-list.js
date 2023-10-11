@@ -4,12 +4,15 @@ class ListaOrdenController {
     static obteneListaOrden(state) {
       return new Promise((resolve, reject) => {
         try {
-            const sql = `SELECT orden.id, cliente.nombre AS cliente_nombre, orden.fecha, orden.estado
-            FROM orden
-            JOIN cliente ON orden.cliente_id = cliente.id
+              const sql = `
+              SELECT orden.id, cliente.nombre AS cliente_nombre, orden.fecha, orden.estado
+              FROM orden
+              JOIN cliente ON orden.cliente_id = cliente.id
+              WHERE orden.estado = ?;
             `;
             
-            const values = [state];
+            const values = [state]; 
+            
   
               db.query(sql, values, (err, results) => {
                 if (err) {

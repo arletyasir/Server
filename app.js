@@ -1,7 +1,8 @@
 import express from 'express';
-import { loginRoute, registerRoute,createMenuRoute,obtenerMenuRoute,reservaRoute,listaReservasRoute,listaReservasUserRoute,getMenuId ,
+import { loginRoute, registerRoute,
   listaOrdenRoute,
-  createAsignacionRoute
+  createAsignacionRoute,
+  updateOrdenRoute
 } from './routes/index.js';
 
 import dotenv from 'dotenv';
@@ -19,52 +20,17 @@ const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
   console.log(req.body)
-  res.status(200).send(`<form action="/createmenu" method="post" enctype="multipart/form-data" >
-  <label>titulo </label>
-  </br>
-  <input type="text" name="title" />
-  </br>
-  <label>descripcion </label>
-  </br>
-  <input type="text" name="descriptiontxt" />
-  </br>
-  <label>Aperitivo de cortesia </label>
-  </br>
-  <input type="text" name="aperitivocortesia" />
-  </br>
-  <label>cupos </label>
-  </br>
-  <input type="number" name="cupos" />
-  </br>
-  <label>precio </label>
-  </br>
-  <input type="number" name="price" />
-  </br>
-  <label>fecha </label>
-  </br>
-  <input type="date" name="fecha" />
-  </br>
-  <label>foto </label>
-  </br>
-  <input type="file" name="fotomenu" />
-  </br>
-  <input type="submit" >  </input>
-  
-</form>`)
+  res.status(200).send(`<h1>Hola</h1>`)
 
 })
 
 app.use(loginRoute);
 app.use(registerRoute);
-app.use(createMenuRoute);
-app.use(obtenerMenuRoute);
-app.use(listaReservasRoute);
-app.use(listaReservasUserRoute);
-app.use(getMenuId);
-app.use(reservaRoute);
+
 
 app.use(listaOrdenRoute);
 app.use(createAsignacionRoute);
+app.use(updateOrdenRoute);
 
 
 app.use(express.static('public'))
