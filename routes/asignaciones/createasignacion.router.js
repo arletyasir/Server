@@ -4,7 +4,7 @@ import createAsignacionController from '../../src/controllers/asignaciones/asign
 const createAsignacionRoute = express.Router();
 import validarToken from '../validarToken.js';
 
-createAsignacionRoute.use(validarToken)
+//createAsignacionRoute.use(validarToken)
 
 createAsignacionRoute.post('/createasignacion', async (req, res) => {
   try {

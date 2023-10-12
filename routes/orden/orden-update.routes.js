@@ -3,7 +3,7 @@ import UpdateController from '../../src/controllers/orden/orden-update.js';
 const updateOrdenRoute = express.Router();
 import validarToken from '../validarToken.js';
 
-updateOrdenRoute.use(validarToken);
+//updateOrdenRoute.use(validarToken);
 
 updateOrdenRoute.put('/updateorden/:orderId', async (req, res) => {
   try {

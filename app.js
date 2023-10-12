@@ -2,7 +2,9 @@ import express from 'express';
 import { loginRoute, registerRoute,
   listaOrdenRoute,
   createAsignacionRoute,
-  updateOrdenRoute
+  updateOrdenRoute,
+  clienteRoute,
+  orderProductoRoute
 } from './routes/index.js';
 
 import dotenv from 'dotenv';
@@ -23,6 +25,8 @@ app.get('/', (req, res) => {
   res.status(200).send(`<h1>Hola</h1>`)
 
 })
+app.use(express.static('public'))
+
 
 app.use(loginRoute);
 app.use(registerRoute);
@@ -31,9 +35,10 @@ app.use(registerRoute);
 app.use(listaOrdenRoute);
 app.use(createAsignacionRoute);
 app.use(updateOrdenRoute);
+app.use(clienteRoute);
+app.use(orderProductoRoute);
 
 
-app.use(express.static('public'))
 
 
 

@@ -3,7 +3,7 @@ import ListaOrdenController from '../../src/controllers/orden/orden-list.js';
 const listaOrdenRoute = express.Router();
 import validarToken from '../validarToken.js';
 
-listaOrdenRoute.use(validarToken)
+//listaOrdenRoute.use(validarToken)
 
 listaOrdenRoute.get('/listaorden/:state', async (req, res) => {
   try {
