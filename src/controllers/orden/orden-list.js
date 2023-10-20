@@ -17,8 +17,10 @@ class ListaOrdenController {
               db.query(sql, values, (err, results) => {
                 if (err) {
                   reject(err);
+                  console.log(err)
                 } else {
                   resolve(results); 
+                  console.log(results)
                 }
               });
         } catch (error) {

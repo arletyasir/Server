@@ -4,7 +4,10 @@ import { loginRoute, registerRoute,
   createAsignacionRoute,
   updateOrdenRoute,
   clienteRoute,
-  orderProductoRoute
+  orderProductoRoute,
+  createCheckoutRoute,
+  listaCheckoutRoute,
+  updateOrdenProductoRoute
 } from './routes/index.js';
 
 import dotenv from 'dotenv';
@@ -37,6 +40,9 @@ app.use(createAsignacionRoute);
 app.use(updateOrdenRoute);
 app.use(clienteRoute);
 app.use(orderProductoRoute);
+app.use(createCheckoutRoute);
+app.use(listaCheckoutRoute);
+app.use(updateOrdenProductoRoute);
 
 
 
